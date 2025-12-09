@@ -1,5 +1,4 @@
-﻿
-namespace DesignPattern.Factory
+﻿namespace DesignPattern.Factory
 {
     public enum DatabaseType
     {

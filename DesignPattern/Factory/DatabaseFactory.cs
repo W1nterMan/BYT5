@@ -4,15 +4,12 @@
     {
         public static IDatabase CreateDatabase(DatabaseType sqlServer)
         {
-            if (sqlServer == DatabaseType.SqlServer)
+            switch (sqlServer)
             {
-                return new SqlServerDatabase();
-            } else if (sqlServer == DatabaseType.Oracle)
-            {
-                return new OracleDatabase();
+                case DatabaseType.SqlServer: return new SqlServerDatabase();
+                case DatabaseType.Oracle: return new OracleDatabase();
+                default: return null;
             }
-
-            return null;
         }
     }
 }
